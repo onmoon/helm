@@ -9,5 +9,6 @@ RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/s
 
 RUN curl "https://kubernetes-helm.storage.googleapis.com/helm-v2.11.0-linux-amd64.tar.gz" | tar zx &&\
     mv linux-amd64/helm /usr/bin/ &&\
-    curl -L -o /usr/bin/kubectl "https://storage.googleapis.com/kubernetes-release/release/v1.12.1/bin/linux/amd64/kubectl" &&\
+    mv linux-amd64/tiller /usr/bin/ &&\
+    curl -L -o /usr/bin/kubectl "https://storage.googleapis.com/kubernetes-release/release/v1.13.0/bin/linux/amd64/kubectl" &&\
     chmod +x /usr/bin/kubectl
